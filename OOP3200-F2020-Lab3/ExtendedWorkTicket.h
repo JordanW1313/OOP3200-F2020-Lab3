@@ -4,16 +4,17 @@
 #define _EXTENDED_WORKTICKET
 
 #include "WorkTicket.h"
-//#include "ExtendedWorkTicket.cpp"
 
+/*   Class Declaration Section   */
 class ExtendedWorkTicket : public WorkTicket
 {
 public:
 
-	/*ExtendedWorkTicket(int myTicketNumber = 0, string myClientID = " ", int day = 1, int month = 1, int year = 2020, string myDescription = " ", bool myOpen = true) :
-		WorkTicket(myTicketNumber, myClientID, day, month, year, myDescription), isOpen{ myOpen } {
-
-	}*/
+	ExtendedWorkTicket()
+	{
+		WorkTicket();
+		isOpen = true;
+	}
 
 	ExtendedWorkTicket(int myTicketNumber, string myClientID, int day, int month, int year, string myDescription, bool myOpen);
 
