@@ -1,4 +1,3 @@
-
 #include "ExtendedWorkTicket.h"
 
 ExtendedWorkTicket::ExtendedWorkTicket(int myTicketNumber, string myClientID, int day, int month, int year, string myDescription, bool myOpen)
