@@ -10,16 +10,20 @@ class ExtendedWorkTicket : public WorkTicket
 {
 public:
 
+	// Default constructor
 	ExtendedWorkTicket()
 	{
 		WorkTicket();
 		isOpen = true;
 	}
 
+	// Constructor declaration.
 	ExtendedWorkTicket(int myTicketNumber, string myClientID, int day, int month, int year, string myDescription, bool myOpen);
 
+	// CloseTicket function declaration.
 	void CloseTicket();
 
+	// Mutator
 	bool SetWorkTicket(int ticket_number, const string& client_id, int day, int month, int year, const string&
 		description, bool myOpen);
 
@@ -28,9 +32,11 @@ public:
 	friend ostream& operator<<(ostream& out, const ExtendedWorkTicket& ticket);
 
 private:
+	// Data members exclusive to ExtendedWorkTicket.
 	bool isOpen;
 };
 
+// Parameterized constructor for an ExtendedWorkTicket obj.
 ExtendedWorkTicket::ExtendedWorkTicket(int myTicketNumber, string myClientID, int day, int month, int year, string myDescription, bool myOpen)
 {
 	SetTicketNumber(myTicketNumber);
@@ -40,11 +46,13 @@ ExtendedWorkTicket::ExtendedWorkTicket(int myTicketNumber, string myClientID, in
 	isOpen = myOpen;
 }
 
+// Is called when a ticket is to be closed.
 void ExtendedWorkTicket::CloseTicket()
 {
 	isOpen = false;
 }
 
+// Overloading SetWorkTicket() to also include myOpen, a boolean variable.
 bool ExtendedWorkTicket::SetWorkTicket(int ticket_number, const string& client_id, int day, int month, int year, const string& description, bool myOpen)
 {
 	bool valid = true;
@@ -62,7 +70,7 @@ bool ExtendedWorkTicket::SetWorkTicket(int ticket_number, const string& client_i
 	return valid;
 }
 
-
+// Overriding ShowWorkTicket() from WorkTicket.
 void ExtendedWorkTicket::ShowWorkTicket() const
 {
 	WorkTicket::ShowWorkTicket();
@@ -77,6 +85,7 @@ void ExtendedWorkTicket::ShowWorkTicket() const
 
 }
 
+// Overloading the "<<" Operator.
 ostream& operator<<(ostream& out, const ExtendedWorkTicket& ticket)
 {
 	string valid;
